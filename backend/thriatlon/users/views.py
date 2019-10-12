@@ -39,9 +39,8 @@ def login_view(request):
             facebook_id=user_info.get('id'),
             profile_image=user_info.get('picture')['data']['url'],
             date_joined=datetime.now(),
-            username=user_info.get('email') or user_info.get('last_name'),
-            gender=user_info.get('gender'),
-            is_active=1)
+            username=user_info.get('email') or user_info.get('last_name')
+        )
         user.set_password(password)
         user.save()
         new_user = True
