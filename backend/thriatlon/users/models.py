@@ -41,22 +41,8 @@ class User(AbstractBaseUser, PermissionsMixin):
             'unique': ("A user with that username already exists."),
         })
 
-    is_staff = models.BooleanField(
-        ('staff status'),
-        default=False,
-        help_text=('Designates whether the user can log into this admin '
-                   'site.'))
-
-    is_active = models.BooleanField(
-        ('active'),
-        default=True,
-        help_text=('Designates whether this user should be treated as '
-                   'active. Unselect this instead of deleting accounts.'))
-
     facebook_id = models.CharField(max_length=200, unique=True)
     profile_image = models.CharField(max_length=300, default='')
-    gender = models.CharField(max_length=10, blank=True, null=True)
-
     objects = UserManager()
 
     # this is needed to use this model with django auth as a custom user class
