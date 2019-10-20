@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'thriatlon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'ec2-46-137-113-157.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
+        'NAME': 'd2bh060cncg96q',
+        'USER': 'ezwebhflrsmfzu',
+        'PASSWORD': ''
     }
 }
 
@@ -119,8 +123,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10
 }
-FACEBOOK_APP_ID = ''
-FACEBOOK_APP_SECRET = ''
+FACEBOOK_APP_ID = '777227539347046'
+FACEBOOK_APP_SECRET = 'e91d30c20a86b1219279532cf409b185'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
