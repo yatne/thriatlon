@@ -25,7 +25,7 @@ SECRET_KEY = 'hbi3nu&qv1^rt30l1&pp#!qa3$as04ifsu97zzc7uiw_45$ogm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['triathlon-challenge.appspot.com']
 
 
 # Application definition
@@ -108,6 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+STATIC_ROOT = 'static'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
