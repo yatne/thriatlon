@@ -1,4 +1,4 @@
-name: CI
+name: Deploy
 
 on: [push]
 
@@ -15,7 +15,7 @@ jobs:
         # Project id
         PROJECT_ID: triathlon-challenge
         # GCP authorization credentials
-        APPLICATION_CREDENTIALS: ${{ GCP_CREDENTIALS }}
+        APPLICATION_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
     
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
