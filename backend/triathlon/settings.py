@@ -86,7 +86,7 @@ DATABASES = {
         'PORT': '5432',
         'NAME': 'd2bh060cncg96q',
         'USER': 'ezwebhflrsmfzu',
-        'PASSWORD': ''
+        'PASSWORD': os.getenv('TRIATHLON_DATABASE_PASSWORD', "it's a secret")
     }
 }
 
@@ -126,7 +126,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 FACEBOOK_APP_ID = '777227539347046'
-FACEBOOK_APP_SECRET = 'e91d30c20a86b1219279532cf409b185'
+FACEBOOK_APP_SECRET = os.getenv('TRIATHLON_FACEBOOK_ID', "it's a secret")
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
