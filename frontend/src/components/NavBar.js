@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoginButton from './LoginButton'
+import LoginButton from './LoginButton';
+import { useReducer } from '../reducer/ReducerProvider'
 
 const NavBarDiv = styled.div`
   display: flex;
@@ -12,10 +13,14 @@ const NavBarDiv = styled.div`
 `;
 
 const NavBar = () => {
+  const { test, test2 } = useReducer()
+
     return (
       <NavBarDiv>
         <div>Triathlon Challenge</div>
         <LoginButton />
+        <button onClick={() => test()}>test</button>
+        <button onClick={() => test2()}>test2</button>
       </NavBarDiv>
     );
 };
