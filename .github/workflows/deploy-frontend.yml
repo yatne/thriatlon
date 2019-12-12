@@ -1,0 +1,29 @@
+name: 'deploy frontend'
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - 'frontend/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    - uses: actions/checkout@v1
+    - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+    - name: build
+      run: |
+        cd frontend
+        yarn install
+        yarn build
+    - name: Google Cloud Platform (GCP) CLI - gcloud
+      uses: actions-hub/gcloud@272.0.0
+      env:
+        PROJECT_ID: triathlon-challenge
+        APPLICATION_CREDENTIALS: ${{ secrets.APPLICATION_CREDENTIALS }}
+      with:
+        args: app deploy ./frontend
